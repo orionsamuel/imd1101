@@ -22,7 +22,6 @@ predicted = pd.Series(clf.fit_predict(X_num), name="predicted", index=X_num.inde
 
 X_predicted = pd.concat([X_num, predicted], axis=1)
 
-
 X_outliers = X_predicted.query("predicted == -1")
 
 print(X_outliers)

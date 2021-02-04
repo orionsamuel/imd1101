@@ -25,5 +25,5 @@ mean_transformer = make_column_transformer(
 
 X_mean = pd.DataFrame(mean_transformer.fit_transform(X), columns=["reviews_per_month"], index=X.index)
 
-print(X_mean.isna().sum())
+#print(X_mean.isna().sum())
 
