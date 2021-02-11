@@ -1,6 +1,6 @@
 import pandas as pd
 from sklearn.model_selection import RepeatedKFold
-from sklearn.metrics import accuracy_score, confusion_matrix
+from sklearn.metrics import accuracy_score, confusion_matrix, precision_score, recall_score, f1_score
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.preprocessing import MinMaxScaler, LabelEncoder
 
@@ -40,7 +40,22 @@ y_pred = knn.predict(X_test)
 #Acurácia do modelo
 acc = str(accuracy_score(y_test, y_pred))
 
-print("Acurácia:", acc)
+print("Acurácia: ", acc)
+
+#Precisão do modelo
+prec = str(precision_score(y_test, y_pred, average = 'macro'))
+
+print("Precisão: ", prec)
+
+#Recall do modelo
+rec = str(recall_score(y_test, y_pred, average = 'macro'))
+
+print("Recall: ", rec)
+
+#F1 score do modelo
+f1 = str(f1_score(y_test, y_pred, average = 'macro'))
+
+print("F1 Score: ", f1)
 
 #Matriz de confusão
 cm = confusion_matrix(y_test, y_pred)
