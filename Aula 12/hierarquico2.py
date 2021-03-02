@@ -1,5 +1,4 @@
 import pandas as pd
-import matplotlib.pyplot as plt
 from sklearn.cluster import AgglomerativeClustering
 
 dados = pd.read_csv('../Bases/PessoaNormBinary.csv')
